@@ -24,8 +24,7 @@ class Song
 
     def artist=(artist)
         @artist = artist
-        @artist.genres.include?(@genre) ? nil : @artist.genres << @genre
-        artist.add_song(self)
+        @artist.add_song(self)
     end
 
     def self.create(name) 
