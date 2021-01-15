@@ -42,4 +42,19 @@ class MusicLibraryController
            puts "#{num}. #{artist}"
         end
     end
+
+    def list_genres
+        num = 0
+        genres = Song.all.sort_by {|song| song.genre.name}
+        genres = genres.map {|song| song.genre.name}
+        genres.uniq!
+        genres.map do |genre|
+            num += 1
+            puts "#{num}. #{genre}"
+         end
+    end
+
+    def list_songs_by_artist
+        
+    end
 end
